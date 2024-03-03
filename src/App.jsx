@@ -8,7 +8,7 @@ function App() {
   const [productData, setProductData] = useState(fromData.productFromData);
 
   return (
-    <div className="container mx-auto mt-6 px-20">
+    <div className="container mx-auto mt-6 px-14">
       <div className="px-30">
         <Header
           cartMap={cartMap}
