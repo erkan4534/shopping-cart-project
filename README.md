@@ -8,3 +8,5 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 <img width="986" alt="image" src="https://github.com/erkan4534/shopping-cart-project/assets/8522891/7278ae63-f82f-4773-a09d-f86b7b5ec459">
+
+<img width="947" alt="image" src="https://github.com/erkan4534/shopping-cart-project/assets/8522891/2cc41106-6c6a-4749-9859-1f7ef8619914">
