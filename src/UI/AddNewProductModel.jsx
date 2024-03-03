@@ -63,7 +63,7 @@ const AddNewProductModel = ({
     <div id="myModal" className="modal" ref={modalRef}>
       <div className="modal-content max-w-xs">
         <div className="modal-header flex justify-between">
-          <h2 className="header-text mt-1">Modal Header</h2>
+          <h2 className="header-text mt-1">New Add Product</h2>
           <span className="close" onClick={modelClose}>
             &times;
           </span>
