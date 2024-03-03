@@ -13,19 +13,16 @@ const ShoppingCart = ({ setCartMap, cartMap }) => {
     return;
   }
 
-  let cartKeys = [...cartMap.keys()];
-
   const removeToCart = (product) => {
     if (cartMap.get(product) == 1) {
-      let newCartMap = cartKeys.filter((item) => item !== product);
-      setCartMap(new Map(newCartMap));
+      cartMap.delete(product);
     } else {
       cartMap.set(product, cartMap.get(product) - 1);
-      setCartMap(new Map(cartMap));
     }
-
-    console.log(cartMap);
+    setCartMap(new Map(cartMap));
   };
+
+  let cartKeys = [...cartMap.keys()];
 
   return (
     <div>
