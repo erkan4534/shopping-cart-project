@@ -3,9 +3,8 @@ import ShoppingCart from "./ShoppingCart";
 import AddNewProductModel from "../UI/AddNewProductModel";
 import { useState } from "react";
 
-const Header = ({ cart, setCart, productData, setProductData }) => {
+const Header = ({ setCartMap, cartMap, productData, setProductData }) => {
   const [showModal, setShowModal] = useState(false);
-
   return (
     <div className="flex justify-between">
       <div className="flex flex-row">
@@ -27,16 +26,19 @@ const Header = ({ cart, setCart, productData, setProductData }) => {
           setProductData={setProductData}
         />
       </div>
-      <ShoppingCart cart={cart} setCart={setCart} />
+
+      {cartMap && cartMap.size != 0 && (
+        <ShoppingCart setCartMap={setCartMap} cartMap={cartMap} />
+      )}
     </div>
   );
 };
 
 Header.propTypes = {
-  cart: PropTypes.array,
-  setCart: PropTypes.func,
   productData: PropTypes.array,
   setProductData: PropTypes.func,
+  setCartMap: PropTypes.func,
+  cartMap: PropTypes.object,
 };
 
 export default Header;

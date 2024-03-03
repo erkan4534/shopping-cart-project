@@ -8,33 +8,24 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const ShoppingCart = ({ cart, setCart }) => {
-  if (cart == undefined || cart.length === 0) {
+const ShoppingCart = ({ setCartMap, cartMap }) => {
+  if (cartMap == undefined) {
     return;
   }
 
-  const cartMap = new Map();
-
-  cart.forEach((item) => {
-    if (cartMap.get(item)) {
-      cartMap.set(item, cartMap.get(item) + 1);
-    } else {
-      cartMap.set(item, 1);
-    }
-  });
+  let cartKeys = [...cartMap.keys()];
 
   const removeToCart = (product) => {
     if (cartMap.get(product) == 1) {
-      let newCart = cart.filter((item) => item !== product);
-      setCart(!newCart ? "" : newCart);
+      let newCartMap = cartKeys.filter((item) => item !== product);
+      setCartMap(new Map(newCartMap));
     } else {
       cartMap.set(product, cartMap.get(product) - 1);
+      setCartMap(new Map(cartMap));
     }
 
-    console.log(cart);
+    console.log(cartMap);
   };
-
-  let cartKeys = [...cartMap.keys()];
 
   return (
     <div>
@@ -92,8 +83,8 @@ const ShoppingCart = ({ cart, setCart }) => {
 };
 
 ShoppingCart.propTypes = {
-  cart: PropTypes.array,
-  setCart: PropTypes.func,
+  setCartMap: PropTypes.func,
+  cartMap: PropTypes.object,
 };
 
 export default ShoppingCart;

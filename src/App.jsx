@@ -4,21 +4,21 @@ import Products from "./components/Products";
 import fromData from "./data/Products/ProductFromData.json";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cartMap, setCartMap] = useState(new Map());
   const [productData, setProductData] = useState(fromData.productFromData);
 
   return (
     <div className="container mx-auto mt-6">
       <div className="px-30">
         <Header
-          cart={cart}
-          setCart={setCart}
+          cartMap={cartMap}
+          setCartMap={setCartMap}
           productData={productData}
           setProductData={setProductData}
         />
         <Products
-          cart={cart}
-          setCart={setCart}
+          cartMap={cartMap}
+          setCartMap={setCartMap}
           productData={productData}
           setProductData={setProductData}
         />

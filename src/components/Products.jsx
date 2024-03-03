@@ -10,8 +10,8 @@ const Products = (props) => {
           <ProductItem
             key={product.id}
             product={product}
-            cart={props.cart}
-            setCart={props.setCart}
+            cartMap={props.cartMap}
+            setCartMap={props.setCartMap}
           />
         );
       })}
@@ -22,8 +22,6 @@ const Products = (props) => {
 Products.propTypes = {
   setCartMap: PropTypes.func,
   cartMap: PropTypes.object,
-  cart: PropTypes.array,
-  setCart: PropTypes.func,
   productData: PropTypes.array,
   setProductData: PropTypes.func,
 };

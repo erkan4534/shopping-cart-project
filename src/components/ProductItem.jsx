@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
 import "./Products.css";
 
-const ProductItem = ({ product, setCart, cart }) => {
+const ProductItem = ({ product, setCartMap, cartMap }) => {
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    if (cartMap.get(product)) {
+      cartMap.set(product, cartMap.get(product) + 1);
+    } else {
+      cartMap.set(product, 1);
+    }
+
+    setCartMap(new Map(cartMap));
   };
 
   return (
@@ -39,8 +45,8 @@ const ProductItem = ({ product, setCart, cart }) => {
 
 ProductItem.propTypes = {
   product: PropTypes.object,
-  cart: PropTypes.array,
-  setCart: PropTypes.func,
+  setCartMap: PropTypes.func,
+  cartMap: PropTypes.object,
 };
 
 export default ProductItem;
