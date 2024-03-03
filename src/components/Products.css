@@ -1,0 +1,16 @@
+.products-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.footerButton {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.gridHight {
+  height: 370px;
+  margin-bottom: 40px;
+}
