@@ -9,20 +9,18 @@ function App() {
 
   return (
     <div className="container mx-auto mt-6 px-14">
-      <div className="px-30">
-        <Header
-          cartMap={cartMap}
-          setCartMap={setCartMap}
-          productData={productData}
-          setProductData={setProductData}
-        />
-        <Products
-          cartMap={cartMap}
-          setCartMap={setCartMap}
-          productData={productData}
-          setProductData={setProductData}
-        />
-      </div>
+      <Header
+        cartMap={cartMap}
+        setCartMap={setCartMap}
+        productData={productData}
+        setProductData={setProductData}
+      />
+      <Products
+        cartMap={cartMap}
+        setCartMap={setCartMap}
+        productData={productData}
+        setProductData={setProductData}
+      />
     </div>
   );
 }
