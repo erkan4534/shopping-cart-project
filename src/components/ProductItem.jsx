@@ -18,8 +18,25 @@ const ProductItem = ({
     setCartMap(new Map(cartMap));
   };
 
-  const addToCartWithoutMap = (product) => {
-    setCartWithoutMap([...cartWithoutMap, product]);
+  const addToCartWithoutMap = (item) => {
+    const product = cartWithoutMap.find((pro) => pro.id === item.id);
+
+    if (!product) {
+      setCartWithoutMap([...cartWithoutMap, { ...item, amount: 1 }]);
+      return;
+    }
+
+    const newCartWithoutMap = cartWithoutMap.map((pro) => {
+      if (pro.id === item.id) {
+        return { ...pro, amount: pro.amount + 1 };
+      }
+
+      return pro;
+    });
+
+    setCartWithoutMap(newCartWithoutMap);
+
+    console.info(cartWithoutMap);
   };
 
   return (
@@ -57,8 +74,8 @@ ProductItem.propTypes = {
   product: PropTypes.object,
   setCartMap: PropTypes.func,
   cartMap: PropTypes.object,
-  cartWithoutMap: PropTypes.object,
-  setCartWithoutMap: PropTypes.array,
+  cartWithoutMap: PropTypes.array,
+  setCartWithoutMap: PropTypes.func,
 };
 
 export default ProductItem;

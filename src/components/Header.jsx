@@ -54,8 +54,8 @@ Header.propTypes = {
   setProductData: PropTypes.func,
   setCartMap: PropTypes.func,
   cartMap: PropTypes.object,
-  setCartWithoutMap: PropTypes.array,
-  cartWithoutMap: PropTypes.object,
+  setCartWithoutMap: PropTypes.func,
+  cartWithoutMap: PropTypes.array,
 };
 
 export default Header;

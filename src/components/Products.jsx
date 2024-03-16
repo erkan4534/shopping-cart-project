@@ -26,8 +26,8 @@ Products.propTypes = {
   cartMap: PropTypes.object,
   productData: PropTypes.array,
   setProductData: PropTypes.func,
-  cartWithoutMap: PropTypes.object,
-  setCartWithoutMap: PropTypes.array,
+  cartWithoutMap: PropTypes.array,
+  setCartWithoutMap: PropTypes.func,
 };
 
 export default Products;
