@@ -3,7 +3,13 @@ import ShoppingCart from "./ShoppingCart";
 import AddNewProductModel from "../UI/AddNewProductModel";
 import { useState } from "react";
 
-const Header = ({ setCartMap, cartMap, productData, setProductData }) => {
+const Header = ({
+  setCartMap,
+  cartMap,
+  productData,
+  setProductData,
+  shoppingModalRef,
+}) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className="flex justify-between">
@@ -28,7 +34,11 @@ const Header = ({ setCartMap, cartMap, productData, setProductData }) => {
       </div>
 
       {cartMap && cartMap.size != 0 && (
-        <ShoppingCart setCartMap={setCartMap} cartMap={cartMap} />
+        <ShoppingCart
+          shoppingModalRef={shoppingModalRef}
+          setCartMap={setCartMap}
+          cartMap={cartMap}
+        />
       )}
     </div>
   );
@@ -39,6 +49,7 @@ Header.propTypes = {
   setProductData: PropTypes.func,
   setCartMap: PropTypes.func,
   cartMap: PropTypes.object,
+  shoppingModalRef: PropTypes.object,
 };
 
 export default Header;
