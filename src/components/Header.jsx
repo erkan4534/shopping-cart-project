@@ -39,7 +39,6 @@ Header.propTypes = {
   setProductData: PropTypes.func,
   setCartMap: PropTypes.func,
   cartMap: PropTypes.object,
-  shoppingModalRef: PropTypes.object,
 };
 
 export default Header;
