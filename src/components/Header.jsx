@@ -12,6 +12,7 @@ const Header = ({
   setProductData,
 }) => {
   const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="flex justify-between">
       <div className="flex flex-row">
@@ -38,10 +39,12 @@ const Header = ({
         <ShoppingCart setCartMap={setCartMap} cartMap={cartMap} />
       )}
 
-      <ShoppingCartWithoutMap
-        setCartWithoutMap={setCartWithoutMap}
-        cartWithoutMap={cartWithoutMap}
-      />
+      {cartWithoutMap && cartWithoutMap.length > 0 && (
+        <ShoppingCartWithoutMap
+          setCartWithoutMap={setCartWithoutMap}
+          cartWithoutMap={cartWithoutMap}
+        />
+      )}
     </div>
   );
 };
