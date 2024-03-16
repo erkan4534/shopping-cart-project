@@ -10,6 +10,12 @@
   width: 100%;
 }
 
+.footerButtonOther {
+  bottom: 50px;
+  position: absolute;
+  width: 100%;
+}
+
 .gridHight {
   height: 370px;
   margin-bottom: 40px;

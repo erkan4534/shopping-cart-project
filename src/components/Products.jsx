@@ -12,6 +12,8 @@ const Products = (props) => {
             product={product}
             cartMap={props.cartMap}
             setCartMap={props.setCartMap}
+            cartWithoutMap={props.cartWithoutMap}
+            setCartWithoutMap={props.setCartWithoutMap}
           />
         );
       })}
@@ -24,6 +26,8 @@ Products.propTypes = {
   cartMap: PropTypes.object,
   productData: PropTypes.array,
   setProductData: PropTypes.func,
+  cartWithoutMap: PropTypes.object,
+  setCartWithoutMap: PropTypes.array,
 };
 
 export default Products;
