@@ -19,8 +19,11 @@ const ShoppingCart = ({ setCartMap, cartMap }) => {
     !isOpen ? setIsOpen(true) : setIsOpen(false);
   }
 
+  function closeDropDown() {
+    setIsOpen(false);
+  }
+
   const removeToCart = (product) => {
-    setIsOpen(true);
     if (cartMap.get(product) == 1) {
       cartMap.delete(product);
     } else {
@@ -36,7 +39,7 @@ const ShoppingCart = ({ setCartMap, cartMap }) => {
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button
-            onClick={() => openDropDown()}
+            onClick={openDropDown}
             className="inline-flex w-full justify-center gap-x-1.5 rounded-md 
           bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset
            ring-gray-300 hover:bg-gray-50"
@@ -60,7 +63,7 @@ const ShoppingCart = ({ setCartMap, cartMap }) => {
           show={isOpen}
         >
           <Menu.Items
-            onMouseLeave={() => setIsOpen(false)}
+            onMouseLeave={closeDropDown}
             className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md
            bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           >
