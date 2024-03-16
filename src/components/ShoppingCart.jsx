@@ -8,7 +8,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const ShoppingCart = ({ setCartMap, cartMap, shoppingModalRef }) => {
+const ShoppingCart = ({ setCartMap, cartMap }) => {
   let [isOpen, setIsOpen] = useState(false);
 
   if (cartMap == undefined) {
@@ -60,6 +60,7 @@ const ShoppingCart = ({ setCartMap, cartMap, shoppingModalRef }) => {
           show={isOpen}
         >
           <Menu.Items
+            onMouseLeave={() => setIsOpen(false)}
             ref={shoppingModalRef}
             className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md
            bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
